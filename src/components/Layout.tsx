@@ -45,12 +45,81 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       <main className={`flex-1 ${isAdmin || isPartner ? 'bg-cream' : ''}`}>{children}</main>
-      <footer className="bg-forest text-cream/80 py-8 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-          <p className="mb-2">
-            <span className="font-display text-base text-cream">KapdaLoop</span> — Give every garment a next life
-          </p>
-          <p className="text-cream/60 text-xs">Prototype: partners and pickups are simulated.</p>
+      <footer className="bg-forest text-cream mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <RecycleLoopIcon className="w-7 h-7 text-sage" />
+                <span className="font-display text-xl text-cream">KapdaLoop</span>
+              </div>
+              <p className="text-sm text-cream/70 leading-relaxed max-w-xs">
+                Give every garment a next life.
+              </p>
+            </div>
+
+            {/* Explore */}
+            <div>
+              <h3 className="font-display text-sm text-cream mb-4 uppercase tracking-wider">Explore</h3>
+              <ul className="space-y-2.5 text-sm">
+                <li>
+                  <Link
+                    to="/give"
+                    className="text-sage hover:text-terracotta transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest rounded"
+                  >
+                    Give Clothes
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/track"
+                    className="text-sage hover:text-terracotta transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest rounded"
+                  >
+                    Track
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin"
+                    className="text-sage hover:text-terracotta transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest rounded"
+                  >
+                    Admin
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h3 className="font-display text-sm text-cream mb-4 uppercase tracking-wider">Contact</h3>
+              <ul className="space-y-2.5 text-sm">
+                <li>
+                  <a
+                    href="mailto:kapdaloop123@gmail.com"
+                    className="text-sage hover:text-terracotta transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest rounded"
+                  >
+                    kapdaloop123@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:partners@kapdaloop.com"
+                    className="text-sage hover:text-terracotta transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2 focus-visible:ring-offset-forest rounded"
+                  >
+                    partners@kapdaloop.com
+                  </a>
+                </li>
+                <li className="text-cream/70">Hyderabad, Telangana, India</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="border-t border-sage/30 mt-10 pt-6 text-center space-y-1">
+            <p className="text-cream/60 text-xs">Prototype: partners and pickups are simulated.</p>
+            <p className="text-cream/60 text-xs">Built for the Software Solutions for Environment Telangana Hackathon.</p>
+          </div>
         </div>
       </footer>
     </div>
